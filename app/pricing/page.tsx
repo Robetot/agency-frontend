@@ -23,6 +23,8 @@ type Tier = {
   setup: number;
   tagline: string;
   featured?: boolean;
+  /** Locked/waitlist tier — desaturated, "Coming Soon", Join Waitlist CTA. */
+  comingSoon?: boolean;
   inherits?: string;
   features: string[];
   note?: string;
@@ -41,7 +43,7 @@ const tiers: Tier[] = [
       "Emergency escalation",
       "Real-time calendar booking",
       "Owner alerts",
-      "Bilingual (English & Spanish)",
+      "Bilingual — English + Spanish (auto-detects)",
       "A2P 10DLC compliance",
     ],
   },
@@ -51,13 +53,14 @@ const tiers: Tier[] = [
     setup: 750,
     tagline: "Capture leads across every channel your customers use.",
     featured: true,
+    comingSoon: true,
     inherits: "Starter",
     features: [
       "WhatsApp messaging",
       "Facebook Messenger",
       "Website chat widget",
       "Review automation",
-      "Lead reactivation campaigns",
+      "All languages supported (auto-detected)",
     ],
   },
   {
@@ -65,12 +68,14 @@ const tiers: Tier[] = [
     price: 800,
     setup: 1000,
     tagline: "Add an AI voice agent and a full client dashboard.",
+    comingSoon: true,
     inherits: "Growth",
     features: [
       "AI voice agent",
       "Client dashboard",
       "Estimate follow-ups",
       "Instagram DM",
+      "All languages supported (auto-detected)",
       "Priority support",
     ],
     note: "Includes 750 voice minutes / mo. Overage billed separately.",
@@ -123,16 +128,25 @@ export default function PricingPage() {
               <Reveal key={tier.name} delay={i * 0.08} from="up">
                 <div
                   className={cn(
-                    "relative flex h-full flex-col rounded-3xl border p-7 shadow-card",
-                    tier.featured
-                      ? "border-accent-primary/50 bg-bg-secondary/70 shadow-glow"
-                      : "glass",
+                    "relative flex h-full flex-col rounded-3xl border p-7 shadow-card transition-all",
+                    tier.comingSoon
+                      ? "border-white/10 bg-bg-secondary/40 opacity-75 saturate-[.4]"
+                      : tier.featured
+                        ? "border-accent-primary/50 bg-bg-secondary/70 shadow-glow"
+                        : "glass",
                   )}
+                  aria-label={tier.comingSoon ? `${tier.name} plan — coming soon` : undefined}
                 >
-                  {tier.featured && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-bg-primary">
-                      Most Popular
+                  {tier.comingSoon ? (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-warning px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-bg-primary shadow-glow">
+                      Coming Soon
                     </span>
+                  ) : (
+                    tier.featured && (
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-bg-primary">
+                        Most Popular
+                      </span>
+                    )
                   )}
                   <h2 className="font-heading text-xl font-semibold">{tier.name}</h2>
                   <p className="mt-1.5 min-h-[2.5rem] text-sm text-text-muted">
@@ -148,14 +162,26 @@ export default function PricingPage() {
                     + ${tier.setup} one-time setup
                   </p>
 
-                  <Button
-                    href="/contact"
-                    size="lg"
-                    variant={tier.featured ? "primary" : "secondary"}
-                    className="mt-6 w-full"
-                  >
-                    Get started
-                  </Button>
+                  {tier.comingSoon ? (
+                    <Button
+                      href="/contact"
+                      size="lg"
+                      variant="secondary"
+                      className="mt-6 w-full cursor-not-allowed border-white/10 bg-white/[0.02] text-text-muted opacity-60 hover:border-white/10 hover:bg-white/[0.02] hover:text-text-muted"
+                    >
+                      <LockIcon />
+                      Join Waitlist
+                    </Button>
+                  ) : (
+                    <Button
+                      href="/contact"
+                      size="lg"
+                      variant={tier.featured ? "primary" : "secondary"}
+                      className="mt-6 w-full"
+                    >
+                      Get started
+                    </Button>
+                  )}
 
                   <div className="mt-7 flex-1">
                     {tier.inherits && (
@@ -166,7 +192,7 @@ export default function PricingPage() {
                     <ul className="space-y-3">
                       {tier.features.map((feature) => (
                         <li key={feature} className="flex items-start gap-3 text-sm">
-                          <CheckIcon featured={tier.featured} />
+                          <CheckIcon featured={tier.featured && !tier.comingSoon} />
                           <span className="text-text-muted">{feature}</span>
                         </li>
                       ))}
@@ -254,5 +280,19 @@ function CheckIcon({ featured }: { featured?: boolean }) {
         />
       </svg>
     </span>
+  );
+}
+
+function LockIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="5" y="11" width="14" height="9" rx="2" fill="currentColor" />
+      <path
+        d="M8 11V8a4 4 0 0 1 8 0v3"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
   );
 }
