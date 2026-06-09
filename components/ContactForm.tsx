@@ -36,7 +36,7 @@ export function ContactForm() {
           </svg>
         </span>
         <h2 className="mt-5 font-heading text-2xl font-semibold">Thanks — you&apos;re in!</h2>
-        <p className="mt-2 max-w-sm text-text-muted">
+        <p className="mt-2 max-w-sm text-text-secondary">
           We&apos;ll reach out shortly to schedule your demo. Prefer to grab a time now?
           Use the scheduler below.
         </p>
@@ -87,25 +87,25 @@ export function ContactForm() {
       </div>
 
       {/* MANDATORY consent — submit stays disabled until checked */}
-      <div className="mt-6 flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4">
+      <div className="mt-6 flex items-start gap-3 rounded-xl border border-line bg-bg-secondary p-4">
         <input
           id="sms-consent"
           name="consent"
           type="checkbox"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-white/20 bg-bg-secondary text-accent-primary accent-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary"
+          className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-slate-300 bg-bg-card text-accent-primary accent-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary"
           aria-describedby="consent-text"
         />
-        <label id="consent-text" htmlFor="sms-consent" className="text-sm leading-relaxed text-text-muted">
+        <label id="consent-text" htmlFor="sms-consent" className="text-sm leading-relaxed text-text-secondary">
           By providing your phone number, you agree to receive text messages from{" "}
           {BRAND_NAME} for business updates. Message and data rates may apply. Reply STOP
           to opt out at any time. View our{" "}
-          <Link href="/legal#privacy" className="text-accent-secondary underline underline-offset-2">
+          <Link href="/legal#privacy" className="text-accent-primary underline underline-offset-2">
             Privacy Policy
           </Link>{" "}
           and{" "}
-          <Link href="/legal#terms" className="text-accent-secondary underline underline-offset-2">
+          <Link href="/legal#terms" className="text-accent-primary underline underline-offset-2">
             Terms
           </Link>
           .
@@ -115,7 +115,7 @@ export function ContactForm() {
       <Button type="submit" size="lg" disabled={!consent} className="mt-6 w-full">
         Request my demo
       </Button>
-      <p className="mt-3 text-center text-xs text-text-muted" aria-live="polite">
+      <p className="mt-3 text-center text-xs text-text-secondary" aria-live="polite">
         {consent
           ? "Thanks — you can submit your request now."
           : "Please agree to the messaging terms above to continue."}

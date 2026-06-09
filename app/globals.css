@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #07111f;
-  --foreground: #ffffff;
+  --background: #f8fafc;
+  --foreground: #0f172a;
 }
 
 @layer base {
@@ -31,22 +31,22 @@
 
   /* Visible, consistent focus ring for keyboard users (WCAG 2.1 AA) */
   :focus-visible {
-    @apply outline-none ring-2 ring-accent-secondary ring-offset-2 ring-offset-bg-primary;
+    @apply outline-none ring-2 ring-accent-primary ring-offset-2 ring-offset-bg-primary;
   }
 
   ::selection {
-    background: rgba(59, 130, 246, 0.35);
-    color: #ffffff;
+    background: rgba(37, 99, 235, 0.18);
+    color: #0f172a;
   }
 }
 
 @layer components {
   .glass {
-    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+    @apply border border-line bg-bg-card shadow-card;
   }
 
   .glass-strong {
-    @apply border border-white/10 bg-bg-secondary/70 backdrop-blur-xl;
+    @apply border border-line bg-bg-card shadow-card;
   }
 
   .container-px {
@@ -54,7 +54,7 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-white via-white to-accent-secondary/80 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-text to-text-secondary bg-clip-text text-transparent;
   }
 
   .text-gradient-accent {

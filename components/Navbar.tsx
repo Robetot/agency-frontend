@@ -23,7 +23,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         scrolled
-          ? "border-b border-white/10 bg-bg-primary/80 backdrop-blur-xl"
+          ? "border-b border-line bg-bg-card/80 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -47,7 +47,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-lg px-3.5 py-2 text-sm font-medium text-text-muted transition-colors hover:text-text"
+              className="rounded-lg px-3.5 py-2 text-sm font-medium text-text-secondary transition-colors hover:text-text"
             >
               {link.label}
             </Link>
@@ -99,7 +99,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-b border-white/10 bg-bg-primary/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-b border-line bg-bg-card/95 backdrop-blur-xl md:hidden"
           >
             <div className="container-px flex flex-col gap-1 py-4">
               {navLinks.map((link) => (
@@ -107,7 +107,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-3 text-base font-medium text-text-muted transition-colors hover:bg-white/[0.05] hover:text-text"
+                  className="rounded-lg px-3 py-3 text-base font-medium text-text-secondary transition-colors hover:bg-slate-100 hover:text-text"
                 >
                   {link.label}
                 </Link>
@@ -132,7 +132,7 @@ function Logo() {
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
         <path
           d="M6.6 10.8a13 13 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.4.55 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1 11 11 0 0 0 .55 3.4 1 1 0 0 1-.25 1Z"
-          fill="#07111F"
+          fill="#FFFFFF"
         />
       </svg>
     </span>

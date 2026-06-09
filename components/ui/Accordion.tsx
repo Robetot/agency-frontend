@@ -14,7 +14,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
   const baseId = useId();
 
   return (
-    <div className="divide-y divide-white/10 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
+    <div className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-bg-card">
       {items.map((item, i) => {
         const isOpen = open === i;
         const headingId = `${baseId}-q-${i}`;
@@ -28,14 +28,14 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-base font-medium text-text transition-colors hover:bg-white/[0.03] sm:text-lg"
+                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-base font-medium text-text transition-colors hover:bg-slate-50 sm:text-lg"
               >
                 <span>{item.question}</span>
                 <span
                   aria-hidden="true"
                   className={cn(
-                    "grid h-7 w-7 shrink-0 place-items-center rounded-full border border-white/15 text-text-muted transition-transform duration-300",
-                    isOpen && "rotate-45 border-accent-secondary/50 text-accent-secondary",
+                    "grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-text-muted transition-transform duration-300",
+                    isOpen && "rotate-45 border-accent-primary/50 text-accent-primary",
                   )}
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -61,7 +61,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                   transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="px-5 pb-6 pr-12 text-sm leading-relaxed text-text-muted sm:text-base">
+                  <p className="px-5 pb-6 pr-12 text-sm leading-relaxed text-text-secondary sm:text-base">
                     {item.answer}
                   </p>
                 </motion.div>

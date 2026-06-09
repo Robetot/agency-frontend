@@ -13,7 +13,7 @@ export function Card({ children, className, interactive, ...rest }: CardProps) {
       className={cn(
         "glass rounded-2xl p-6 shadow-card",
         interactive &&
-          "transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary/40 hover:shadow-glow",
+          "transition-all duration-300 hover:-translate-y-1 hover:border-accent-primary/40 hover:shadow-md",
         className,
       )}
       {...rest}

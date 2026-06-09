@@ -50,7 +50,7 @@ const stages: Stage[] = [
 ];
 
 const toneRing: Record<Stage["tone"], string> = {
-  muted: "border-white/15 text-text-muted",
+  muted: "border-line text-text-muted",
   danger: "border-danger/60 text-danger",
   accent: "border-accent-primary/70 text-accent-primary",
   cyan: "border-accent-secondary/70 text-accent-secondary",
@@ -98,15 +98,15 @@ export function WorkflowAnimation() {
                   }}
                   transition={{ duration: 0.4 }}
                   className={[
-                    "grid h-12 w-12 shrink-0 place-items-center rounded-2xl border bg-bg-primary/70",
-                    isActive ? toneRing[stage.tone] : "border-white/15 text-text-muted",
+                    "grid h-12 w-12 shrink-0 place-items-center rounded-2xl border bg-bg-secondary",
+                    isActive ? toneRing[stage.tone] : "border-line text-text-muted",
                     isActive ? toneGlow[stage.tone] : "",
                   ].join(" ")}
                 >
                   {stage.icon}
                 </motion.div>
                 {i < stages.length - 1 && (
-                  <div className="relative my-1 w-px flex-1 bg-white/10">
+                  <div className="relative my-1 w-px flex-1 bg-slate-200">
                     <motion.div
                       className="absolute inset-x-0 top-0 w-px bg-accent-secondary"
                       initial={false}
@@ -147,7 +147,7 @@ export function WorkflowAnimation() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="mt-0.5 text-sm text-text-muted"
+                      className="mt-0.5 text-sm text-text-secondary"
                     >
                       {stage.detail}
                     </motion.p>

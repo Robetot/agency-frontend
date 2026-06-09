@@ -28,10 +28,10 @@ export function LegalNav({ sections }: { sections: Section[] }) {
 
   return (
     <nav aria-label="Legal sections" className="lg:sticky lg:top-28">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-text-muted">
+      <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-text-secondary">
         On this page
       </p>
-      <ul className="flex flex-col gap-1 border-l border-white/10">
+      <ul className="flex flex-col gap-1 border-l border-line">
         {sections.map((s) => (
           <li key={s.id}>
             <a
@@ -40,8 +40,8 @@ export function LegalNav({ sections }: { sections: Section[] }) {
               className={cn(
                 "-ml-px block border-l-2 py-1.5 pl-4 text-sm transition-colors",
                 active === s.id
-                  ? "border-accent-secondary font-medium text-text"
-                  : "border-transparent text-text-muted hover:border-white/30 hover:text-text",
+                  ? "border-accent-primary font-medium text-text"
+                  : "border-transparent text-text-secondary hover:border-slate-300 hover:text-text",
               )}
             >
               {s.label}

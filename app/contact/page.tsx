@@ -20,13 +20,13 @@ export default function ContactPage() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-radial-accent" />
       <div className="container-px relative pb-24">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-wider text-accent-secondary">
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-primary">
             Book a Demo
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold sm:text-5xl">
             See {BRAND_NAME} answer your missed calls
           </h1>
-          <p className="mt-4 text-lg text-text-muted">
+          <p className="mt-4 text-lg text-text-secondary">
             Tell us a little about your business and we&apos;ll show you exactly how the
             AI qualifies and books your leads — usually within one business day.
           </p>
@@ -38,7 +38,7 @@ export default function ContactPage() {
           {/* Calendly scheduler embed */}
           <div className="glass rounded-2xl p-6 sm:p-8">
             <h2 className="font-heading text-xl font-semibold">Prefer to pick a time?</h2>
-            <p className="mt-2 text-sm text-text-muted">
+            <p className="mt-2 text-sm text-text-secondary">
               Grab a slot on our calendar and we&apos;ll call you then.
             </p>
 
@@ -59,11 +59,11 @@ export default function ContactPage() {
             */}
             <div
               id="calendly-embed"
-              className="mt-6 grid min-h-[420px] place-items-center rounded-xl border border-dashed border-white/15 bg-bg-secondary/40 p-6 text-center"
+              className="mt-6 grid min-h-[420px] place-items-center rounded-xl border border-dashed border-slate-300 bg-bg-secondary p-6 text-center"
             >
               <div>
                 <p className="text-sm font-medium text-text">Calendly embed goes here</p>
-                <p className="mt-1 text-xs text-text-muted">
+                <p className="mt-1 text-xs text-text-secondary">
                   Replace this placeholder with your Calendly inline-widget snippet.
                 </p>
               </div>

@@ -11,18 +11,22 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          primary: "#07111F",
-          secondary: "#0F172A",
+          primary: "#F8FAFC",
+          secondary: "#F1F5F9",
+          card: "#FFFFFF",
         },
+        line: "#E2E8F0",
         accent: {
-          primary: "#3B82F6",
-          secondary: "#22D3EE",
+          primary: "#2563EB",
+          primaryHover: "#1D4ED8",
+          secondary: "#0EA5E9",
         },
         success: "#10B981",
         warning: "#F59E0B",
         danger: "#EF4444",
         text: {
-          DEFAULT: "#FFFFFF",
+          DEFAULT: "#0F172A",
+          secondary: "#475569",
           muted: "#94A3B8",
         },
       },
@@ -34,15 +38,15 @@ const config: Config = {
         content: "1200px",
       },
       boxShadow: {
-        glow: "0 0 40px -10px rgba(59, 130, 246, 0.45)",
-        "glow-cyan": "0 0 40px -10px rgba(34, 211, 238, 0.45)",
-        card: "0 8px 30px rgba(2, 8, 23, 0.5)",
+        glow: "0 10px 30px -12px rgba(37, 130, 235, 0.35)",
+        "glow-cyan": "0 10px 30px -12px rgba(14, 165, 233, 0.35)",
+        card: "0 1px 2px rgba(15, 23, 42, 0.04), 0 6px 20px -8px rgba(15, 23, 42, 0.10)",
       },
       backgroundImage: {
         "grid-faint":
-          "linear-gradient(to right, rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.06) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(100,116,139,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(100,116,139,0.08) 1px, transparent 1px)",
         "radial-accent":
-          "radial-gradient(60% 60% at 50% 0%, rgba(59,130,246,0.18) 0%, rgba(7,17,31,0) 70%)",
+          "radial-gradient(60% 60% at 50% 0%, rgba(37,99,235,0.10) 0%, rgba(248,250,252,0) 70%)",
       },
       keyframes: {
         "pulse-ring": {

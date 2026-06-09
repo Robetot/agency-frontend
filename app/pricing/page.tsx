@@ -108,13 +108,13 @@ export default function PricingPage() {
         <div className="container-px relative">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-accent-secondary">
+              <span className="text-sm font-semibold uppercase tracking-wider text-accent-primary">
                 Pricing
               </span>
               <h1 className="mt-4 font-heading text-4xl font-bold sm:text-6xl">
                 Plans that pay for themselves
               </h1>
-              <p className="mt-5 text-lg text-text-muted">
+              <p className="mt-5 text-lg text-text-secondary">
                 One recovered job often covers the month. Choose the plan that matches
                 how your customers reach you — every tier includes the core missed-call
                 text-back engine.
@@ -130,35 +130,33 @@ export default function PricingPage() {
                   className={cn(
                     "relative flex h-full flex-col rounded-3xl border p-7 shadow-card transition-all",
                     tier.comingSoon
-                      ? "border-white/10 bg-bg-secondary/40 opacity-75 saturate-[.4]"
-                      : tier.featured
-                        ? "border-accent-primary/50 bg-bg-secondary/70 shadow-glow"
-                        : "glass",
+                      ? "border-line bg-bg-primary opacity-75"
+                      : "border-accent-primary bg-bg-card shadow-card",
                   )}
                   aria-label={tier.comingSoon ? `${tier.name} plan — coming soon` : undefined}
                 >
                   {tier.comingSoon ? (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-warning px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-bg-primary shadow-glow">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-warning px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-[#0F172A]">
                       Coming Soon
                     </span>
                   ) : (
                     tier.featured && (
-                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-bg-primary">
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-white">
                         Most Popular
                       </span>
                     )
                   )}
                   <h2 className="font-heading text-xl font-semibold">{tier.name}</h2>
-                  <p className="mt-1.5 min-h-[2.5rem] text-sm text-text-muted">
+                  <p className="mt-1.5 min-h-[2.5rem] text-sm text-text-secondary">
                     {tier.tagline}
                   </p>
                   <div className="mt-5 flex items-baseline gap-1">
                     <span className="font-heading text-5xl font-bold">
                       ${tier.price}
                     </span>
-                    <span className="text-text-muted">/mo</span>
+                    <span className="text-text-secondary">/mo</span>
                   </div>
-                  <p className="mt-2 text-sm text-text-muted">
+                  <p className="mt-2 text-sm text-text-secondary">
                     + ${tier.setup} one-time setup
                   </p>
 
@@ -167,7 +165,7 @@ export default function PricingPage() {
                       href="/contact"
                       size="lg"
                       variant="secondary"
-                      className="mt-6 w-full cursor-not-allowed border-white/10 bg-white/[0.02] text-text-muted opacity-60 hover:border-white/10 hover:bg-white/[0.02] hover:text-text-muted"
+                      className="mt-6 w-full cursor-not-allowed border-line bg-bg-card text-text-secondary opacity-70 hover:border-line hover:bg-bg-card hover:text-text-secondary"
                     >
                       <LockIcon />
                       Join Waitlist
@@ -176,7 +174,7 @@ export default function PricingPage() {
                     <Button
                       href="/contact"
                       size="lg"
-                      variant={tier.featured ? "primary" : "secondary"}
+                      variant="primary"
                       className="mt-6 w-full"
                     >
                       Get started
@@ -193,12 +191,12 @@ export default function PricingPage() {
                       {tier.features.map((feature) => (
                         <li key={feature} className="flex items-start gap-3 text-sm">
                           <CheckIcon featured={tier.featured && !tier.comingSoon} />
-                          <span className="text-text-muted">{feature}</span>
+                          <span className="text-text-secondary">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     {tier.note && (
-                      <p className="mt-5 rounded-lg border border-warning/30 bg-warning/[0.06] px-3 py-2 text-xs leading-relaxed text-warning">
+                      <p className="mt-5 rounded-lg border border-warning/30 bg-warning/[0.08] px-3 py-2 text-xs leading-relaxed text-[#B45309]">
                         {tier.note}
                       </p>
                     )}
@@ -209,7 +207,7 @@ export default function PricingPage() {
           </div>
 
           <Reveal>
-            <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-text-muted">
+            <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-text-secondary">
               Carrier and usage fees (phone number, messaging, voice minutes) billed as
               pass-through.
             </p>
@@ -243,7 +241,7 @@ export default function PricingPage() {
                 <h2 className="font-heading text-3xl font-bold sm:text-4xl">
                   Not sure which plan fits?
                 </h2>
-                <p className="mt-4 text-lg text-text-muted">
+                <p className="mt-4 text-lg text-text-secondary">
                   Book a quick demo and we&apos;ll recommend the right tier for your call
                   volume and channels.
                 </p>

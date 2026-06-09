@@ -28,13 +28,13 @@ export default function LegalPage() {
     <section className="pt-28 sm:pt-32">
       <div className="container-px pb-24">
         <header className="mx-auto max-w-3xl">
-          <span className="text-sm font-semibold uppercase tracking-wider text-accent-secondary">
+          <span className="text-sm font-semibold uppercase tracking-wider text-accent-primary">
             Legal
           </span>
           <h1 className="mt-4 font-heading text-4xl font-bold sm:text-5xl">
             Legal &amp; Compliance
           </h1>
-          <p className="mt-4 text-text-muted">
+          <p className="mt-4 text-text-secondary">
             Last updated: {lastUpdated}. This page covers our Privacy Policy, Terms of
             Service, AI Disclosure, and compliance disclaimers.
           </p>
@@ -112,12 +112,12 @@ export default function LegalPage() {
                   is not a replacement for 911 or emergency services. If you are
                   experiencing a life-threatening emergency, call 911 immediately.
                 </li>
-                <li className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                <li className="rounded-xl border border-line bg-bg-secondary p-4">
                   <strong className="text-text">No protected health information.</strong>{" "}
                   This service does not collect, process, or store HIPAA-protected health
                   information. Please do not send protected health information through it.
                 </li>
-                <li className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                <li className="rounded-xl border border-line bg-bg-secondary p-4">
                   <strong className="text-text">No payment data via SMS.</strong> This
                   service does not accept credit card or PCI cardholder data via text
                   message. Never send payment card information over SMS.
@@ -144,15 +144,15 @@ function LegalSection({
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className="scroll-mt-28 border-t border-white/10 py-10 first:border-t-0 first:pt-0"
-    >
+      className="scroll-mt-28 border-t border-line py-10 first:border-t-0 first:pt-0"
+      >
       <h2
         id={`${id}-heading`}
         className="font-heading text-2xl font-bold sm:text-3xl"
       >
         {title}
       </h2>
-      <div className="mt-5 space-y-4 text-sm leading-relaxed text-text-muted sm:text-base">
+      <div className="mt-5 space-y-4 text-sm leading-relaxed text-text-secondary sm:text-base">
         {children}
       </div>
     </section>

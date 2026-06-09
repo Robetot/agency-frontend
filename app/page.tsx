@@ -46,7 +46,7 @@ export default function HomePage() {
         <div className="container-px relative grid items-center gap-12 pb-20 lg:grid-cols-2 lg:gap-8 lg:pb-28">
           <div>
             <Reveal from="up">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-xs font-medium text-text-muted">
+              <span className="inline-flex items-center gap-2 rounded-full border border-line bg-bg-card px-3.5 py-1.5 text-xs font-medium text-text-secondary shadow-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-success" aria-hidden="true" />
                 AI missed-call text-back for home services
               </span>
@@ -59,7 +59,7 @@ export default function HomePage() {
               </h1>
             </Reveal>
             <Reveal from="up" delay={0.12}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-text-muted">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-text-secondary">
                 When you can&apos;t pick up, {BRAND_NAME} instantly texts the caller
                 back, qualifies the job, and books the appointment — so the call you
                 missed doesn&apos;t become the customer you lost.
@@ -76,7 +76,7 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Reveal from="up" delay={0.24}>
-              <p className="mt-6 text-sm text-text-muted">
+              <p className="mt-6 text-sm text-text-secondary">
                 Replies in seconds · Bilingual · A2P compliant
               </p>
             </Reveal>
@@ -89,7 +89,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- PROBLEM ---------- */}
-      <section className="border-t border-white/10 bg-bg-secondary/30 py-20 sm:py-28">
+      <section className="border-t border-line bg-bg-secondary py-20 sm:py-28">
         <div className="container-px">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -97,7 +97,7 @@ export default function HomePage() {
               <h2 className="mt-4 font-heading text-3xl font-bold sm:text-4xl">
                 Half of calls to home services go unanswered
               </h2>
-              <p className="mt-4 text-lg text-text-muted">
+              <p className="mt-4 text-lg text-text-secondary">
                 And most callers don&apos;t leave a voicemail — they just call the next
                 company on the list. Every missed call is a job handed to a competitor.
               </p>
@@ -128,7 +128,7 @@ export default function HomePage() {
                   <p className="font-heading text-5xl font-bold text-gradient-accent">
                     {stat.value}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-text-muted">
+                  <p className="mt-3 text-sm leading-relaxed text-text-secondary">
                     {stat.label}
                   </p>
                 </Card>
@@ -136,7 +136,7 @@ export default function HomePage() {
             ))}
           </div>
           <Reveal>
-            <p className="mt-6 text-center text-xs text-text-muted">
+            <p className="mt-6 text-center text-xs text-text-secondary">
               Figures are illustrative industry estimates, not a performance guarantee.
             </p>
           </Reveal>
@@ -160,17 +160,17 @@ export default function HomePage() {
               <Reveal key={step.title} delay={i * 0.1} from="up" as="li">
                 <Card interactive className="h-full">
                   <div className="flex items-center gap-3">
-                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-accent-primary to-accent-secondary font-heading text-lg font-bold text-bg-primary">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-accent-primary to-accent-secondary font-heading text-lg font-bold text-white">
                       {i + 1}
                     </span>
                     {i < steps.length - 1 && (
-                      <span className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
+                      <span className="h-px flex-1 bg-gradient-to-r from-slate-300 to-transparent" />
                     )}
                   </div>
                   <h3 className="mt-5 font-heading text-xl font-semibold">
                     {step.title}
                   </h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-text-muted">
+                  <p className="mt-2.5 text-sm leading-relaxed text-text-secondary">
                     {step.body}
                   </p>
                 </Card>
@@ -183,7 +183,7 @@ export default function HomePage() {
       {/* ---------- INTERACTIVE DEMO 1: CONVERSATION ---------- */}
       <section
         id="conversation-demo"
-        className="border-y border-white/10 bg-bg-secondary/30 py-20 sm:py-28"
+        className="border-y border-line bg-bg-secondary py-20 sm:py-28"
       >
         <div className="container-px grid items-center gap-12 lg:grid-cols-2">
           <Reveal from="right">
@@ -192,7 +192,7 @@ export default function HomePage() {
               <h2 className="mt-4 font-heading text-3xl font-bold sm:text-4xl">
                 Watch a real lead get qualified — by text
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-text-muted">
+              <p className="mt-4 text-lg leading-relaxed text-text-secondary">
                 A homeowner with a leaking water heater calls and you can&apos;t pick
                 up. Here&apos;s exactly how the assistant turns that missed call into a
                 booked, priority appointment — captured area, urgency, and time slot
@@ -205,7 +205,7 @@ export default function HomePage() {
                   "Detects urgency and flags emergencies as priority",
                   "Books a real time slot and alerts your team",
                 ].map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-text-muted">
+                  <li key={point} className="flex items-start gap-3 text-text-secondary">
                     <CheckIcon />
                     <span>{point}</span>
                   </li>
@@ -228,7 +228,7 @@ export default function HomePage() {
               <h2 className="mt-4 font-heading text-3xl font-bold sm:text-4xl">
                 What are missed calls costing you?
               </h2>
-              <p className="mt-4 text-lg text-text-muted">
+              <p className="mt-4 text-lg text-text-secondary">
                 Drag the sliders to see how much revenue you could recover every month
                 by answering the calls you currently miss.
               </p>
@@ -241,7 +241,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- FEATURES ---------- */}
-      <section className="border-t border-white/10 bg-bg-secondary/30 py-20 sm:py-28">
+      <section className="border-t border-line bg-bg-secondary py-20 sm:py-28">
         <div className="container-px">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -267,7 +267,7 @@ export default function HomePage() {
                   >
                     <div className="flex items-center gap-3">
                       <span
-                        className={`grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.04] ${
+                        className={`grid h-11 w-11 place-items-center rounded-xl border border-line bg-bg-secondary ${
                           toneClasses[feature.tone] ?? "text-accent-primary"
                         } ${isEmergency ? "animate-pulse-ring" : ""}`}
                       >
@@ -282,7 +282,7 @@ export default function HomePage() {
                     <h3 className="mt-5 font-heading text-lg font-semibold">
                       {feature.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                    <p className="mt-2 text-sm leading-relaxed text-text-secondary">
                       {feature.body}
                     </p>
                   </Card>
@@ -303,8 +303,8 @@ export default function HomePage() {
                 <h2 className="mt-4 font-heading text-3xl font-bold sm:text-4xl">
                   Questions, answered
                 </h2>
-                <p className="mt-4 text-text-muted">
-                  Still curious? <a className="text-accent-secondary underline-offset-4 hover:underline" href="/contact">Talk to us</a> and we&apos;ll walk you through a live demo.
+                <p className="mt-4 text-text-secondary">
+                  Still curious? <a className="text-accent-primary underline-offset-4 hover:underline" href="/contact">Talk to us</a> and we&apos;ll walk you through a live demo.
                 </p>
               </div>
             </Reveal>
@@ -325,7 +325,7 @@ export default function HomePage() {
                 <h2 className="font-heading text-3xl font-bold sm:text-5xl">
                   Stop losing jobs to voicemail
                 </h2>
-                <p className="mt-5 text-lg text-text-muted">
+                <p className="mt-5 text-lg text-text-secondary">
                   See how {BRAND_NAME} answers, qualifies, and books your missed calls —
                   live, on a quick demo built around your business.
                 </p>
@@ -348,7 +348,7 @@ export default function HomePage() {
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <span className="text-sm font-semibold uppercase tracking-wider text-accent-secondary">
+    <span className="text-sm font-semibold uppercase tracking-wider text-accent-primary">
       {children}
     </span>
   );
@@ -357,7 +357,7 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 function DemoSkeleton({ label }: { label: string }) {
   return (
     <div
-      className="glass flex min-h-[20rem] items-center justify-center rounded-2xl text-sm text-text-muted"
+      className="glass flex min-h-[20rem] items-center justify-center rounded-2xl text-sm text-text-secondary"
       role="status"
       aria-live="polite"
     >

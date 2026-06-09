@@ -115,11 +115,11 @@ export function ConversationSim() {
 
   return (
     <div ref={containerRef} className="mx-auto w-full max-w-sm">
-      <div className="glass-strong relative overflow-hidden rounded-[2rem] border-white/15 p-3 shadow-card">
+      <div className="glass-strong relative overflow-hidden rounded-[2rem] border-line p-3 shadow-card">
         {/* Phone header */}
-        <div className="flex items-center justify-between rounded-2xl bg-bg-primary/60 px-4 py-3">
+        <div className="flex items-center justify-between rounded-2xl bg-bg-secondary px-4 py-3">
           <div className="flex items-center gap-3">
-            <div className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-accent-primary to-accent-secondary text-sm font-bold text-bg-primary">
+            <div className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-accent-primary to-accent-secondary text-sm font-bold text-white">
               RP
             </div>
             <div>
@@ -150,7 +150,7 @@ export function ConversationSim() {
             <button
               type="button"
               onClick={play}
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] py-2.5 text-sm font-medium text-text-muted transition-colors hover:bg-white/[0.06] hover:text-text"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-line bg-bg-secondary py-2.5 text-sm font-medium text-text-secondary transition-colors hover:bg-slate-100 hover:text-text"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
@@ -184,7 +184,7 @@ function Bubble({ msg }: { msg: Message }) {
           className={`mb-1 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold ${
             msg.tag.tone === "priority"
               ? "animate-pulse-ring bg-danger/15 text-danger"
-              : "bg-accent-secondary/15 text-accent-secondary"
+              : "bg-accent-primary/10 text-accent-primary"
           }`}
         >
           {msg.tag.tone === "priority" && (
@@ -196,13 +196,13 @@ function Bubble({ msg }: { msg: Message }) {
       <div
         className={`max-w-[82%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
           isAi
-            ? "rounded-bl-md bg-white/[0.07] text-text"
+            ? "rounded-bl-md bg-slate-100 text-text"
             : "rounded-br-md bg-gradient-to-br from-accent-primary to-accent-primary/80 text-white"
         }`}
       >
         {msg.text}
       </div>
-      <span className="mt-1 px-1 text-[10px] uppercase tracking-wide text-text-muted/70">
+      <span className="mt-1 px-1 text-[10px] uppercase tracking-wide text-text-muted">
         {isAi ? "AI assistant" : "Caller"}
       </span>
     </motion.div>
@@ -215,7 +215,7 @@ function TypingIndicator() {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
-      className="flex items-center gap-1.5 rounded-2xl rounded-bl-md bg-white/[0.07] px-4 py-3"
+      className="flex items-center gap-1.5 rounded-2xl rounded-bl-md bg-slate-100 px-4 py-3"
       style={{ width: "fit-content" }}
       aria-hidden="true"
     >
