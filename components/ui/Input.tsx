@@ -3,7 +3,7 @@ import type { InputHTMLAttributes, SelectHTMLAttributes, ReactNode } from "react
 import { cn } from "@/lib/utils";
 
 const fieldClasses =
-  "w-full rounded-xl border border-line bg-bg-card px-4 py-3 text-text placeholder:text-text-muted transition-colors focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/30";
+  "w-full rounded-2xl border border-line bg-bg-card px-4 py-3 text-text placeholder:text-text-muted transition-colors focus:border-accent-primary focus:outline-none focus:ring-2 focus:ring-accent-primary/30";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;

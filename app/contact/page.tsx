@@ -32,7 +32,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-2 lg:items-start">
+        <div className="mx-auto mt-14 grid max-w-5xl gap-8 lg:grid-cols-2 lg:items-start">
           <ContactForm />
 
           {/* Calendly scheduler embed */}

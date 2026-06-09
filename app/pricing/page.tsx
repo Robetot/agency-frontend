@@ -128,10 +128,10 @@ export default function PricingPage() {
               <Reveal key={tier.name} delay={i * 0.08} from="up">
                 <div
                   className={cn(
-                    "relative flex h-full flex-col rounded-3xl border p-7 shadow-card transition-all",
+                    "relative flex h-full flex-col rounded-3xl p-8 shadow-soft transition-all",
                     tier.comingSoon
-                      ? "border-line bg-bg-primary opacity-75"
-                      : "border-accent-primary bg-bg-card shadow-card",
+                      ? "bg-bg-primary opacity-75"
+                      : "border border-accent-primary bg-bg-card shadow-soft",
                   )}
                   aria-label={tier.comingSoon ? `${tier.name} plan — coming soon` : undefined}
                 >
@@ -216,7 +216,7 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing FAQ */}
-      <section className="py-20 sm:py-28">
+      <section className="py-28 sm:py-36">
         <div className="container-px">
           <Reveal>
             <h2 className="text-center font-heading text-3xl font-bold sm:text-4xl">
@@ -232,10 +232,10 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="pb-24 sm:pb-32">
+      <section className="pb-28 sm:pb-36">
         <div className="container-px">
           <Reveal>
-            <div className="glass-strong relative overflow-hidden rounded-3xl px-6 py-14 text-center sm:py-16">
+            <div className="glass-strong relative overflow-hidden rounded-3xl px-6 py-16 text-center sm:py-20">
               <div className="pointer-events-none absolute inset-0 bg-radial-accent" />
               <div className="relative mx-auto max-w-2xl">
                 <h2 className="font-heading text-3xl font-bold sm:text-4xl">
