@@ -16,6 +16,13 @@
 
   body {
     @apply bg-bg-primary text-text antialiased;
+    background-image: radial-gradient(at 18% 12%, #ffffff 0px, transparent 55%),
+      radial-gradient(at 82% 8%, #f1f5f9 0px, transparent 50%),
+      radial-gradient(at 72% 78%, #ffffff 0px, transparent 50%),
+      radial-gradient(at 22% 82%, #f1f5f9 0px, transparent 55%),
+      radial-gradient(at 50% 50%, #f8fafc 0px, transparent 70%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     font-feature-settings: "cv11", "ss01";
     text-rendering: optimizeLegibility;
   }
@@ -42,11 +49,11 @@
 
 @layer components {
   .glass {
-    @apply border border-line bg-bg-card shadow-card;
+    @apply rounded-3xl bg-bg-card shadow-soft;
   }
 
   .glass-strong {
-    @apply border border-line bg-bg-card shadow-card;
+    @apply rounded-3xl bg-bg-card shadow-soft;
   }
 
   .container-px {

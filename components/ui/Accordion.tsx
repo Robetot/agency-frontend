@@ -14,7 +14,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
   const baseId = useId();
 
   return (
-    <div className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-bg-card">
+    <div className="divide-y divide-line overflow-hidden rounded-3xl bg-bg-card shadow-soft">
       {items.map((item, i) => {
         const isOpen = open === i;
         const headingId = `${baseId}-q-${i}`;

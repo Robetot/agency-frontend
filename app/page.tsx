@@ -40,10 +40,17 @@ export default function HomePage() {
       />
 
       {/* ---------- HERO ---------- */}
-      <section className="relative overflow-hidden pt-28 sm:pt-32">
-        <div className="pointer-events-none absolute inset-0 bg-grid-faint [background-size:48px_48px] [mask-image:radial-gradient(70%_50%_at_50%_0%,black,transparent)]" />
+      <section className="relative overflow-hidden pt-32 sm:pt-40">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-32 -top-24 h-[34rem] w-[34rem] rounded-full bg-[#E2E8F0] opacity-70 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 top-20 h-[30rem] w-[30rem] rounded-full bg-[#E2E8F0] opacity-60 blur-3xl"
+        />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[600px] bg-radial-accent" />
-        <div className="container-px relative grid items-center gap-12 pb-20 lg:grid-cols-2 lg:gap-8 lg:pb-28">
+        <div className="container-px relative grid items-center gap-14 pb-24 lg:grid-cols-2 lg:gap-12 lg:pb-36">
           <div>
             <Reveal from="up">
               <span className="inline-flex items-center gap-2 rounded-full border border-line bg-bg-card px-3.5 py-1.5 text-xs font-medium text-text-secondary shadow-sm">
@@ -59,14 +66,14 @@ export default function HomePage() {
               </h1>
             </Reveal>
             <Reveal from="up" delay={0.12}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-text-secondary">
+              <p className="mt-8 max-w-xl text-lg leading-relaxed text-text-secondary">
                 When you can&apos;t pick up, {BRAND_NAME} instantly texts the caller
                 back, qualifies the job, and books the appointment — so the call you
                 missed doesn&apos;t become the customer you lost.
               </p>
             </Reveal>
             <Reveal from="up" delay={0.18}>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <Button href="/contact" size="lg">
                   Book a Demo
                 </Button>
@@ -89,7 +96,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- PROBLEM ---------- */}
-      <section className="border-t border-line bg-bg-secondary py-20 sm:py-28">
+      <section className="border-t border-line bg-bg-secondary py-28 sm:py-36">
         <div className="container-px">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -97,14 +104,14 @@ export default function HomePage() {
               <h2 className="mt-4 font-heading text-3xl font-bold sm:text-4xl">
                 Half of calls to home services go unanswered
               </h2>
-              <p className="mt-4 text-lg text-text-secondary">
+              <p className="mt-6 text-lg text-text-secondary">
                 And most callers don&apos;t leave a voicemail — they just call the next
                 company on the list. Every missed call is a job handed to a competitor.
               </p>
             </div>
           </Reveal>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-3">
+          <div className="mt-16 grid gap-5 sm:grid-cols-3">
             {[
               {
                 value: <CountUp to={50} suffix="%" />,
@@ -144,7 +151,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- HOW IT WORKS ---------- */}
-      <section id="how-it-works" className="py-20 sm:py-28">
+      <section id="how-it-works" className="py-28 sm:py-36">
         <div className="container-px">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -155,7 +162,7 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <ol className="mt-14 grid gap-6 md:grid-cols-3">
+          <ol className="mt-16 grid gap-6 md:grid-cols-3">
             {steps.map((step, i) => (
               <Reveal key={step.title} delay={i * 0.1} from="up" as="li">
                 <Card interactive className="h-full">
@@ -183,7 +190,7 @@ export default function HomePage() {
       {/* ---------- INTERACTIVE DEMO 1: CONVERSATION ---------- */}
       <section
         id="conversation-demo"
-        className="border-y border-line bg-bg-secondary py-20 sm:py-28"
+        className="border-y border-line bg-bg-secondary py-28 sm:py-36"
       >
         <div className="container-px grid items-center gap-12 lg:grid-cols-2">
           <Reveal from="right">
@@ -192,7 +199,7 @@ export default function HomePage() {
               <h2 className="mt-4 font-heading text-3xl font-bold sm:text-4xl">
                 Watch a real lead get qualified — by text
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-text-secondary">
+              <p className="mt-6 text-lg leading-relaxed text-text-secondary">
                 A homeowner with a leaking water heater calls and you can&apos;t pick
                 up. Here&apos;s exactly how the assistant turns that missed call into a
                 booked, priority appointment — captured area, urgency, and time slot
@@ -220,7 +227,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- INTERACTIVE DEMO 2: ROI ---------- */}
-      <section id="roi-calculator" className="py-20 sm:py-28">
+      <section id="roi-calculator" className="py-28 sm:py-36">
         <div className="container-px">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -228,7 +235,7 @@ export default function HomePage() {
               <h2 className="mt-4 font-heading text-3xl font-bold sm:text-4xl">
                 What are missed calls costing you?
               </h2>
-              <p className="mt-4 text-lg text-text-secondary">
+              <p className="mt-6 text-lg text-text-secondary">
                 Drag the sliders to see how much revenue you could recover every month
                 by answering the calls you currently miss.
               </p>
@@ -241,7 +248,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- FEATURES ---------- */}
-      <section className="border-t border-line bg-bg-secondary py-20 sm:py-28">
+      <section className="border-t border-line bg-bg-secondary py-28 sm:py-36">
         <div className="container-px">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -252,7 +259,7 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, i) => {
               const isEmergency = feature.tone === "danger";
               return (
@@ -294,7 +301,7 @@ export default function HomePage() {
       </section>
 
       {/* ---------- FAQ ---------- */}
-      <section id="faq" className="py-20 sm:py-28">
+      <section id="faq" className="py-28 sm:py-36">
         <div className="container-px">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <Reveal from="right">
@@ -316,16 +323,16 @@ export default function HomePage() {
       </section>
 
       {/* ---------- FINAL CTA ---------- */}
-      <section className="pb-24 sm:pb-32">
+      <section className="pb-28 sm:pb-36">
         <div className="container-px">
           <Reveal>
-            <div className="glass-strong relative overflow-hidden rounded-3xl px-6 py-16 text-center sm:px-12 sm:py-20">
+            <div className="glass-strong relative overflow-hidden rounded-3xl px-6 py-20 text-center sm:px-12 sm:py-24">
               <div className="pointer-events-none absolute inset-0 bg-radial-accent" />
               <div className="relative mx-auto max-w-2xl">
                 <h2 className="font-heading text-3xl font-bold sm:text-5xl">
                   Stop losing jobs to voicemail
                 </h2>
-                <p className="mt-5 text-lg text-text-secondary">
+                <p className="mt-8 text-lg text-text-secondary">
                   See how {BRAND_NAME} answers, qualifies, and books your missed calls —
                   live, on a quick demo built around your business.
                 </p>

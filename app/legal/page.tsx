@@ -144,7 +144,7 @@ function LegalSection({
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className="scroll-mt-28 border-t border-line py-10 first:border-t-0 first:pt-0"
+      className="scroll-mt-28 border-t border-line py-12 first:border-t-0 first:pt-0"
       >
       <h2
         id={`${id}-heading`}

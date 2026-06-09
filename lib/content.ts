@@ -46,7 +46,7 @@ export function faqJsonLd() {
 export const features = [
   {
     title: "AI lead qualification",
-    body: "Conversational AI (powered by DeepSeek) asks the right questions — job type, location, urgency — and captures structured lead details automatically.",
+    body: "Conversational AI asks the right questions — job type, location, urgency — and captures structured lead details automatically.",
     tone: "accent",
   },
   {
