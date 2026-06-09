@@ -94,7 +94,7 @@ export function ContactForm() {
           type="checkbox"
           checked={consent}
           onChange={(e) => setConsent(e.target.checked)}
-          className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-slate-300 bg-bg-card text-accent-primary accent-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary"
+          className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-line bg-bg-card text-accent-primary accent-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary"
           aria-describedby="consent-text"
         />
         <label id="consent-text" htmlFor="sms-consent" className="text-sm leading-relaxed text-text-secondary">

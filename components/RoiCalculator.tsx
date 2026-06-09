@@ -67,13 +67,12 @@ export function RoiCalculator() {
       </div>
 
       {/* Output */}
-      <div className="glass-strong relative flex flex-col justify-center overflow-hidden rounded-2xl p-6 text-center sm:p-8">
-        <div className="pointer-events-none absolute inset-0 bg-radial-accent" />
+      <div className="glass-strong relative flex flex-col justify-center overflow-hidden rounded-2xl bg-accent-primary p-6 text-center sm:p-8">
         <div className="relative">
-          <p className="text-sm font-medium uppercase tracking-wide text-text-secondary">
+          <p className="text-sm font-medium uppercase tracking-[0.12em] text-[#FAF8F5]/80">
             Potential monthly revenue recovered
           </p>
-          <p className="mt-3 font-heading text-5xl font-bold text-gradient-accent sm:text-6xl">
+          <p className="mt-3 font-heading text-5xl font-bold text-[#FAF8F5] sm:text-6xl">
             <AnimatedNumber value={recovered} format={formatCurrency} />
           </p>
           <div className="mt-6 grid grid-cols-2 gap-3">
@@ -94,9 +93,9 @@ export function RoiCalculator() {
 
 function Stat({ label, value }: { label: string; value: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-line bg-bg-secondary p-4">
-      <p className="font-heading text-2xl font-semibold text-text tabular-nums">{value}</p>
-      <p className="mt-1 text-xs text-text-secondary">{label}</p>
+    <div className="rounded-xl border border-white/15 bg-white/[0.08] p-4">
+      <p className="font-heading text-2xl font-semibold text-[#FAF8F5] tabular-nums">{value}</p>
+      <p className="mt-1 text-xs text-[#FAF8F5]/75">{label}</p>
     </div>
   );
 }
