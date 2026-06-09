@@ -59,7 +59,7 @@ export function RoiCalculator() {
             format={(v) => `${v}%`}
           />
         </div>
-        <p className="mt-8 text-xs leading-relaxed text-text-muted">
+        <p className="mt-8 text-xs leading-relaxed text-text-secondary">
           Estimate assumes ~{Math.round(RECAPTURE_RATE * 100)}% of missed callers
           re-engage when they receive an instant text back. Your results will vary by
           market, trade, and response time. This is an illustration, not a guarantee.
@@ -70,7 +70,7 @@ export function RoiCalculator() {
       <div className="glass-strong relative flex flex-col justify-center overflow-hidden rounded-2xl p-6 text-center sm:p-8">
         <div className="pointer-events-none absolute inset-0 bg-radial-accent" />
         <div className="relative">
-          <p className="text-sm font-medium uppercase tracking-wide text-text-muted">
+          <p className="text-sm font-medium uppercase tracking-wide text-text-secondary">
             Potential monthly revenue recovered
           </p>
           <p className="mt-3 font-heading text-5xl font-bold text-gradient-accent sm:text-6xl">
@@ -94,9 +94,9 @@ export function RoiCalculator() {
 
 function Stat({ label, value }: { label: string; value: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+    <div className="rounded-xl border border-line bg-bg-secondary p-4">
       <p className="font-heading text-2xl font-semibold text-text tabular-nums">{value}</p>
-      <p className="mt-1 text-xs text-text-muted">{label}</p>
+      <p className="mt-1 text-xs text-text-secondary">{label}</p>
     </div>
   );
 }

@@ -67,7 +67,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${interTight.variable} dark`}>
+    <html lang="en" className={`${inter.variable} ${interTight.variable}`}>
       <body className="min-h-screen bg-bg-primary font-sans text-text">
         <a
           href="#main"

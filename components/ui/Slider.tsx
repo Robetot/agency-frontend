@@ -35,7 +35,7 @@ export function Slider({
         <label htmlFor={id} className="text-sm font-medium text-text">
           {label}
         </label>
-        <span className="font-heading text-lg font-semibold text-accent-secondary tabular-nums">
+        <span className="font-heading text-lg font-semibold text-accent-primary tabular-nums">
           {display}
         </span>
       </div>
@@ -48,9 +48,9 @@ export function Slider({
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         aria-valuetext={display}
-        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-accent-secondary [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent-secondary [&::-webkit-slider-thumb]:shadow-glow-cyan"
+        className="h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-accent-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-accent-primary [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent-primary [&::-webkit-slider-thumb]:shadow-glow"
         style={{
-          background: `linear-gradient(to right, #3B82F6 0%, #22D3EE ${percent}%, rgba(255,255,255,0.1) ${percent}%, rgba(255,255,255,0.1) 100%)`,
+          background: `linear-gradient(to right, #2563EB 0%, #0EA5E9 ${percent}%, #E2E8F0 ${percent}%, #E2E8F0 100%)`,
         }}
       />
     </div>
