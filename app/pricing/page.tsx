@@ -33,7 +33,7 @@ type Tier = {
 const tiers: Tier[] = [
   {
     name: "Starter",
-    price: 150,
+    price: 149,
     tagline: "Everything you need to stop losing missed calls.",
     features: [
       {
@@ -90,7 +90,7 @@ const tiers: Tier[] = [
   },
   {
     name: "Growth",
-    price: 250,
+    price: 249,
     tagline: "Capture leads across every channel your customers use.",
     featured: true,
     comingSoon: true,
@@ -125,7 +125,7 @@ const tiers: Tier[] = [
   },
   {
     name: "Pro",
-    price: 300,
+    price: 399,
     tagline: "A full client dashboard and CRM sync for growing teams.",
     comingSoon: true,
     inherits: "Growth",
