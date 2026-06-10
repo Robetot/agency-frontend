@@ -1,4 +1,4 @@
-/** Tiny className combiner — avoids a clsx dependency for this small surface. */
+/** Tiny className combiner - avoids a clsx dependency for this small surface. */
 export function cn(...classes: Array<string | false | null | undefined>): string {
   return classes.filter(Boolean).join(" ");
 }

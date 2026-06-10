@@ -20,10 +20,9 @@ export const metadata: Metadata = {
 type Tier = {
   name: string;
   price: number;
-  setup: number;
   tagline: string;
   featured?: boolean;
-  /** Locked/waitlist tier — desaturated, "Coming Soon", Join Waitlist CTA. */
+  /** Locked/waitlist tier - desaturated, "Coming Soon", Join Waitlist CTA. */
   comingSoon?: boolean;
   inherits?: string;
   features: string[];
@@ -33,8 +32,7 @@ type Tier = {
 const tiers: Tier[] = [
   {
     name: "Starter",
-    price: 300,
-    setup: 500,
+    price: 150,
     tagline: "Everything you need to stop losing missed calls.",
     features: [
       "Missed-call text-back",
@@ -43,14 +41,13 @@ const tiers: Tier[] = [
       "Emergency escalation",
       "Real-time calendar booking",
       "Owner alerts",
-      "Bilingual — English + Spanish (auto-detects)",
+      "Bilingual - English + Spanish (auto-detects)",
       "A2P 10DLC compliance",
     ],
   },
   {
     name: "Growth",
-    price: 500,
-    setup: 750,
+    price: 250,
     tagline: "Capture leads across every channel your customers use.",
     featured: true,
     comingSoon: true,
@@ -65,29 +62,22 @@ const tiers: Tier[] = [
   },
   {
     name: "Pro",
-    price: 800,
-    setup: 1000,
-    tagline: "Add an AI voice agent and a full client dashboard.",
+    price: 300,
+    tagline: "A full client dashboard and CRM sync for growing teams.",
     comingSoon: true,
     inherits: "Growth",
     features: [
-      "AI voice agent",
       "Client dashboard",
       "Estimate follow-ups",
       "Instagram DM",
       "All languages supported (auto-detected)",
+      "CRM integration - leads sync to Jobber / Housecall Pro",
       "Priority support",
     ],
-    note: "Includes 750 voice minutes / mo. Overage billed separately.",
   },
 ];
 
 const pricingFaqs = [
-  {
-    question: "What's included in the one-time setup fee?",
-    answer:
-      "Setup covers number/messaging configuration, A2P 10DLC brand and campaign registration, building your AI qualification flow around your services and service area, calendar integration, and testing before you go live.",
-  },
   {
     question: "What are pass-through carrier and usage fees?",
     answer:
@@ -96,7 +86,7 @@ const pricingFaqs = [
   {
     question: "Can I change plans later?",
     answer:
-      "Yes — you can upgrade or downgrade as your needs change. Setup fees only apply to net-new configuration work, not to plan changes.",
+      "Yes. You can upgrade or downgrade anytime as your needs change. There are no long-term contracts.",
   },
 ];
 
@@ -113,7 +103,7 @@ export default function PricingPage() {
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-text-secondary">
                 One recovered job often covers the month. Choose the plan that matches
-                how your customers reach you — every tier includes the core missed-call
+                how your customers reach you. Every tier includes the core missed-call
                 text-back engine.
               </p>
             </div>
@@ -130,7 +120,7 @@ export default function PricingPage() {
                       ? "border border-line bg-bg-primary opacity-80"
                       : "border border-accent-primary bg-bg-card shadow-soft",
                   )}
-                  aria-label={tier.comingSoon ? `${tier.name} plan — coming soon` : undefined}
+                  aria-label={tier.comingSoon ? `${tier.name} plan - coming soon` : undefined}
                 >
                   {tier.comingSoon ? (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-[#1C1A17]">
@@ -153,9 +143,6 @@ export default function PricingPage() {
                     </span>
                     <span className="text-text-secondary">/mo</span>
                   </div>
-                  <p className="mt-2 text-sm text-text-secondary">
-                    + ${tier.setup} one-time setup
-                  </p>
 
                   {tier.comingSoon ? (
                     <Button

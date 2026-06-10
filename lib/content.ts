@@ -4,12 +4,12 @@ export const faqs = [
   {
     question: "Does this replace me or my team?",
     answer:
-      "No. It handles the calls you'd otherwise miss — answering instantly by text, qualifying the lead, and booking the appointment. You and your techs still do the work; the AI just makes sure no opportunity slips through while you're on a job.",
+      "No. It handles the calls you'd otherwise miss, answering instantly by text, qualifying the lead, and booking the appointment. You and your techs still do the work; the AI just makes sure no opportunity slips through while you're on a job.",
   },
   {
     question: "Is it a real person texting?",
     answer:
-      "No. It's an automated AI assistant, and it identifies itself as one. When a conversation needs a human — complex quotes, escalations, or anything outside its scope — it hands off and alerts you or your on-call team.",
+      "No. It's an automated AI assistant, and it identifies itself as one. When a conversation needs a human - complex quotes, escalations, or anything outside its scope - it hands off and alerts you or your on-call team.",
   },
   {
     question: "What about spam and texting laws?",
@@ -19,12 +19,12 @@ export const faqs = [
   {
     question: "What if the AI says the wrong thing?",
     answer:
-      "The assistant is scoped to your services, service area, and booking rules — it won't quote prices it shouldn't or promise things you don't offer. Edge cases and anything it's unsure about are escalated to a human, and you can review every conversation.",
+      "The assistant is scoped to your services, service area, and booking rules, so it won't quote prices it shouldn't or promise things you don't offer. Edge cases and anything it's unsure about are escalated to a human, and you can review every conversation.",
   },
   {
     question: "Do I keep my existing phone number?",
     answer:
-      "Yes. We work with your current business number through call forwarding and messaging setup — your customers keep calling the same number they always have. No number porting required.",
+      "Yes. We work with your current business number through call forwarding and messaging setup. Your customers keep calling the same number they always have. No number porting required.",
   },
 ] as const;
 
@@ -46,7 +46,7 @@ export function faqJsonLd() {
 export const features = [
   {
     title: "AI lead qualification",
-    body: "Conversational AI asks the right questions — job type, location, urgency — and captures structured lead details automatically.",
+    body: "Conversational AI asks the right questions, job type, location, and urgency, and captures structured lead details automatically.",
     tone: "accent",
   },
   {
@@ -56,7 +56,7 @@ export const features = [
   },
   {
     title: "Real-time calendar booking",
-    body: "Offers live, open time slots and books the appointment directly on your calendar — no back-and-forth phone tag.",
+    body: "Offers live, open time slots and books the appointment directly on your calendar, no back-and-forth phone tag.",
     tone: "accent",
   },
   {
@@ -65,7 +65,7 @@ export const features = [
     tone: "danger",
   },
   {
-    title: "Bilingual — English & Spanish",
+    title: "Bilingual - English & Spanish",
     body: "Detects the caller's language and qualifies leads naturally in both English and Spanish.",
     tone: "cyan",
   },
@@ -79,7 +79,7 @@ export const features = [
 export const steps = [
   {
     title: "Catch the missed call",
-    body: "When a call goes unanswered, we detect it instantly and trigger an automatic text back to the caller — usually within seconds.",
+    body: "When a call goes unanswered, we detect it instantly and trigger an automatic text back to the caller, usually within seconds.",
   },
   {
     title: "AI qualifies by text",

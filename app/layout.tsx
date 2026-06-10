@@ -14,7 +14,7 @@ const inter = localFont({
   weight: "100 900",
 });
 
-// Characterful humanist serif for headlines — does most of the hand-crafted work.
+// Characterful humanist serif for headlines - does most of the hand-crafted work.
 const fraunces = localFont({
   src: "./fonts/Fraunces-Variable.woff2",
   variable: "--font-fraunces",
@@ -22,7 +22,7 @@ const fraunces = localFont({
   weight: "100 900",
 });
 
-const title = `${BRAND_NAME} — Never Miss Another Lead`;
+const title = `${BRAND_NAME} - Never Miss Another Lead`;
 const description =
   "AI-powered missed-call text-back for home services. When you miss a call, our AI texts the caller back, qualifies the lead, and books the appointment automatically.";
 

@@ -91,7 +91,7 @@ export default function LegalPage() {
             <LegalSection id="ai-disclosure" title="AI Disclosure">
               <p>
                 The assistant that responds to your calls and messages is automated
-                artificial intelligence — not a human. It identifies itself as an
+                artificial intelligence, not a human. It identifies itself as an
                 automated assistant and is designed to help answer questions, qualify
                 your request, and schedule appointments.
               </p>
