@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { Accordion } from "@/components/ui/Accordion";
 import { Reveal } from "@/components/ui/Reveal";
+import { FeatureTooltip } from "@/components/ui/FeatureTooltip";
 import { BRAND_NAME } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -25,7 +26,7 @@ type Tier = {
   /** Locked/waitlist tier - desaturated, "Coming Soon", Join Waitlist CTA. */
   comingSoon?: boolean;
   inherits?: string;
-  features: string[];
+  features: { label: string; tooltip: string }[];
   note?: string;
 };
 
@@ -35,14 +36,56 @@ const tiers: Tier[] = [
     price: 150,
     tagline: "Everything you need to stop losing missed calls.",
     features: [
-      "Missed-call text-back",
-      "AI lead qualification",
-      "ZIP-code service-area gating",
-      "Emergency escalation",
-      "Real-time calendar booking",
-      "Owner alerts",
-      "Bilingual - English + Spanish (auto-detects)",
-      "A2P 10DLC compliance",
+      {
+        label: "Missed-call text-back",
+        tooltip:
+          "When a customer calls and you do not pick up, we text them back in under 60 seconds. Most callers do not leave voicemails - they call the next company. This catches them before they do.",
+      },
+      {
+        label: "AI lead qualification",
+        tooltip:
+          "The AI asks what they need, where they are, and how urgent the job is. You only hear about real, qualified leads - not time-wasters.",
+      },
+      {
+        label: "ZIP-code service-area gating",
+        tooltip:
+          "You tell us which ZIP codes you serve. Callers outside your area get a polite decline automatically. No wasted time on jobs you cannot take.",
+      },
+      {
+        label: "Emergency escalation",
+        tooltip:
+          "If someone mentions a gas smell, flooding, or a burst pipe, you get an immediate alert by text - even if you are on another job. Safety situations never wait in a queue.",
+      },
+      {
+        label: "Real-time calendar booking",
+        tooltip:
+          "The AI checks your actual Google Calendar availability and offers the caller real open windows. Jobs book directly into your calendar with no back-and-forth.",
+      },
+      {
+        label: "Owner alerts",
+        tooltip:
+          "Every qualified lead triggers an instant text to you with the caller's name, what they need, their location, and urgency. Always in the loop without checking an app.",
+      },
+      {
+        label: "Bilingual - English + Spanish (auto-detects)",
+        tooltip:
+          "The system detects the customer's language automatically and replies in kind. No setup needed. Captures Spanish-speaking leads that would otherwise be lost.",
+      },
+      {
+        label: "Weekly ROI summary",
+        tooltip:
+          "Every Monday morning you get a text showing calls caught, leads qualified, jobs booked, and estimated revenue recovered that week. Makes the value of the service undeniable.",
+      },
+      {
+        label: "A2P 10DLC compliance",
+        tooltip:
+          "Your messages are registered with US mobile carriers as legitimate business communications. Higher delivery rates and your texts never get filtered as spam.",
+      },
+      {
+        label: "Keep your existing number",
+        tooltip:
+          "No need to change anything on your trucks, Google listing, or business cards. We set up a simple one-time forwarding rule on your phone. Your number stays exactly the same.",
+      },
     ],
   },
   {
@@ -53,11 +96,31 @@ const tiers: Tier[] = [
     comingSoon: true,
     inherits: "Starter",
     features: [
-      "WhatsApp messaging",
-      "Facebook Messenger",
-      "Website chat widget",
-      "Review automation",
-      "All languages supported (auto-detected)",
+      {
+        label: "WhatsApp messaging",
+        tooltip:
+          "Customers who prefer WhatsApp can message your business and get the same AI experience. Common with Spanish-speaking customers and in many local markets.",
+      },
+      {
+        label: "Facebook Messenger",
+        tooltip:
+          "Anyone who messages your Facebook business page gets an instant AI response. Captures leads from social media without you having to monitor it.",
+      },
+      {
+        label: "Website chat widget",
+        tooltip:
+          "A small chat button on your website that connects visitors to the same AI. Captures leads from your site the same way it captures missed calls.",
+      },
+      {
+        label: "Review automation",
+        tooltip:
+          "After a completed job, the system texts your customer a friendly request to leave a Google review. More reviews means higher ranking and more inbound calls.",
+      },
+      {
+        label: "All languages supported (auto-detected)",
+        tooltip:
+          "Beyond English and Spanish, the system responds in any language the customer uses. No setup needed. Every lead captured regardless of language.",
+      },
     ],
   },
   {
@@ -67,12 +130,36 @@ const tiers: Tier[] = [
     comingSoon: true,
     inherits: "Growth",
     features: [
-      "Client dashboard",
-      "Estimate follow-ups",
-      "Instagram DM",
-      "All languages supported (auto-detected)",
-      "CRM integration - leads sync to Jobber / Housecall Pro",
-      "Priority support",
+      {
+        label: "Client dashboard",
+        tooltip:
+          "A live web dashboard showing all your leads, conversations, bookings, and performance in one place. Useful for businesses with office staff or multiple technicians.",
+      },
+      {
+        label: "Estimate follow-ups",
+        tooltip:
+          "When an estimate goes unanswered, the system automatically follows up by text after a set number of days. Recovers jobs that would otherwise go cold.",
+      },
+      {
+        label: "Instagram DM",
+        tooltip:
+          "Customers who message your Instagram business account get an instant AI response and qualification. Captures leads from social without manual monitoring.",
+      },
+      {
+        label: "All languages supported (auto-detected)",
+        tooltip:
+          "Beyond English and Spanish, the system responds in any language the customer uses. No setup needed. Every lead captured regardless of language.",
+      },
+      {
+        label: "CRM integration - leads sync to Jobber / Housecall Pro",
+        tooltip:
+          "Qualified leads are automatically pushed into your existing dispatch software. No copy-pasting, no double entry. Your team sees the lead the moment it comes in.",
+      },
+      {
+        label: "Priority support",
+        tooltip:
+          "Direct access to our team with a guaranteed response within 24 hours. For businesses where any downtime directly costs revenue.",
+      },
     ],
   },
 ];
@@ -173,9 +260,9 @@ export default function PricingPage() {
                     )}
                     <ul className="space-y-3">
                       {tier.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-3 text-sm">
+                        <li key={feature.label} className="flex items-start gap-3 text-sm">
                           <CheckIcon featured={tier.featured && !tier.comingSoon} />
-                          <span className="text-text-secondary">{feature}</span>
+                          <FeatureTooltip label={feature.label} tooltip={feature.tooltip} />
                         </li>
                       ))}
                     </ul>
