@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 type Tier = {
   name: string;
   price: number;
-  setup: number;
   tagline: string;
   featured?: boolean;
   /** Locked/waitlist tier — desaturated, "Coming Soon", Join Waitlist CTA. */
@@ -33,8 +32,7 @@ type Tier = {
 const tiers: Tier[] = [
   {
     name: "Starter",
-    price: 300,
-    setup: 500,
+    price: 150,
     tagline: "Everything you need to stop losing missed calls.",
     features: [
       "Missed-call text-back",
@@ -49,8 +47,7 @@ const tiers: Tier[] = [
   },
   {
     name: "Growth",
-    price: 500,
-    setup: 750,
+    price: 250,
     tagline: "Capture leads across every channel your customers use.",
     featured: true,
     comingSoon: true,
@@ -65,29 +62,22 @@ const tiers: Tier[] = [
   },
   {
     name: "Pro",
-    price: 800,
-    setup: 1000,
-    tagline: "Add an AI voice agent and a full client dashboard.",
+    price: 300,
+    tagline: "A full client dashboard and CRM sync for growing teams.",
     comingSoon: true,
     inherits: "Growth",
     features: [
-      "AI voice agent",
       "Client dashboard",
       "Estimate follow-ups",
       "Instagram DM",
       "All languages supported (auto-detected)",
+      "CRM integration — leads sync to Jobber / Housecall Pro",
       "Priority support",
     ],
-    note: "Includes 750 voice minutes / mo. Overage billed separately.",
   },
 ];
 
 const pricingFaqs = [
-  {
-    question: "What's included in the one-time setup fee?",
-    answer:
-      "Setup covers number/messaging configuration, A2P 10DLC brand and campaign registration, building your AI qualification flow around your services and service area, calendar integration, and testing before you go live.",
-  },
   {
     question: "What are pass-through carrier and usage fees?",
     answer:
@@ -96,7 +86,7 @@ const pricingFaqs = [
   {
     question: "Can I change plans later?",
     answer:
-      "Yes — you can upgrade or downgrade as your needs change. Setup fees only apply to net-new configuration work, not to plan changes.",
+      "Yes — you can upgrade or downgrade anytime as your needs change. There are no long-term contracts.",
   },
 ];
 
@@ -153,9 +143,6 @@ export default function PricingPage() {
                     </span>
                     <span className="text-text-secondary">/mo</span>
                   </div>
-                  <p className="mt-2 text-sm text-text-secondary">
-                    + ${tier.setup} one-time setup
-                  </p>
 
                   {tier.comingSoon ? (
                     <Button
