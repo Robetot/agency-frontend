@@ -16,14 +16,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="relative overflow-hidden pt-28 sm:pt-32">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-radial-accent" />
+    <section className="relative overflow-hidden pt-32 sm:pt-40">
       <div className="container-px relative pb-24">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-wider text-accent-primary">
+          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-accent-primary">
             Book a Demo
           </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold sm:text-5xl">
+          <h1 className="mt-5 font-heading text-4xl font-semibold sm:text-5xl">
             See {BRAND_NAME} answer your missed calls
           </h1>
           <p className="mt-4 text-lg text-text-secondary">
@@ -59,7 +58,7 @@ export default function ContactPage() {
             */}
             <div
               id="calendly-embed"
-              className="mt-6 grid min-h-[420px] place-items-center rounded-xl border border-dashed border-slate-300 bg-bg-secondary p-6 text-center"
+              className="mt-6 grid min-h-[420px] place-items-center rounded-xl border border-dashed border-line bg-bg-secondary p-6 text-center"
             >
               <div>
                 <p className="text-sm font-medium text-text">Calendly embed goes here</p>

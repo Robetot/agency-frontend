@@ -11,9 +11,9 @@ export function Card({ children, className, interactive, ...rest }: CardProps) {
   return (
     <div
       className={cn(
-        "glass rounded-3xl p-6 sm:p-7",
+        "glass rounded-2xl p-6 sm:p-7",
         interactive &&
-          "transition-all duration-300 hover:-translate-y-1.5 hover:shadow-soft-lg",
+          "transition-all duration-300 hover:-translate-y-1 hover:shadow-soft-lg",
         className,
       )}
       {...rest}

@@ -41,7 +41,7 @@ export function LegalNav({ sections }: { sections: Section[] }) {
                 "-ml-px block border-l-2 py-1.5 pl-4 text-sm transition-colors",
                 active === s.id
                   ? "border-accent-primary font-medium text-text"
-                  : "border-transparent text-text-secondary hover:border-slate-300 hover:text-text",
+                  : "border-transparent text-text-secondary hover:border-accent-primary/40 hover:text-text",
               )}
             >
               {s.label}

@@ -103,18 +103,15 @@ const pricingFaqs = [
 export default function PricingPage() {
   return (
     <>
-      <section className="relative overflow-hidden pt-28 sm:pt-32">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[500px] bg-radial-accent" />
+      <section className="relative overflow-hidden pt-32 sm:pt-40">
         <div className="container-px relative">
           <Reveal>
-            <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-accent-primary">
-                Pricing
-              </span>
-              <h1 className="mt-4 font-heading text-4xl font-bold sm:text-6xl">
+            <div className="max-w-2xl">
+              <span className="eyebrow">Pricing</span>
+              <h1 className="mt-5 font-heading text-4xl font-semibold leading-[1.05] sm:text-6xl">
                 Plans that pay for themselves
               </h1>
-              <p className="mt-5 text-lg text-text-secondary">
+              <p className="mt-6 text-lg leading-relaxed text-text-secondary">
                 One recovered job often covers the month. Choose the plan that matches
                 how your customers reach you — every tier includes the core missed-call
                 text-back engine.
@@ -128,20 +125,20 @@ export default function PricingPage() {
               <Reveal key={tier.name} delay={i * 0.08} from="up">
                 <div
                   className={cn(
-                    "relative flex h-full flex-col rounded-3xl p-8 shadow-soft transition-all",
+                    "relative flex h-full flex-col rounded-2xl p-8 shadow-soft transition-all",
                     tier.comingSoon
-                      ? "bg-bg-primary opacity-75"
+                      ? "border border-line bg-bg-primary opacity-80"
                       : "border border-accent-primary bg-bg-card shadow-soft",
                   )}
                   aria-label={tier.comingSoon ? `${tier.name} plan — coming soon` : undefined}
                 >
                   {tier.comingSoon ? (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-warning px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-[#0F172A]">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-[#1C1A17]">
                       Coming Soon
                     </span>
                   ) : (
                     tier.featured && (
-                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-primary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-[#FAF8F5]">
                         Most Popular
                       </span>
                     )
@@ -151,7 +148,7 @@ export default function PricingPage() {
                     {tier.tagline}
                   </p>
                   <div className="mt-5 flex items-baseline gap-1">
-                    <span className="font-heading text-5xl font-bold">
+                    <span className="font-heading text-5xl font-semibold">
                       ${tier.price}
                     </span>
                     <span className="text-text-secondary">/mo</span>
@@ -235,10 +232,9 @@ export default function PricingPage() {
       <section className="pb-28 sm:pb-36">
         <div className="container-px">
           <Reveal>
-            <div className="glass-strong relative overflow-hidden rounded-3xl px-6 py-16 text-center sm:py-20">
-              <div className="pointer-events-none absolute inset-0 bg-radial-accent" />
+            <div className="relative overflow-hidden rounded-2xl border border-line bg-bg-card px-6 py-16 text-center shadow-soft sm:py-20">
               <div className="relative mx-auto max-w-2xl">
-                <h2 className="font-heading text-3xl font-bold sm:text-4xl">
+                <h2 className="font-heading text-3xl font-semibold sm:text-4xl">
                   Not sure which plan fits?
                 </h2>
                 <p className="mt-4 text-lg text-text-secondary">

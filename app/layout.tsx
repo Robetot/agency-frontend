@@ -14,9 +14,10 @@ const inter = localFont({
   weight: "100 900",
 });
 
-const interTight = localFont({
-  src: "./fonts/InterTight-Variable.woff2",
-  variable: "--font-inter-tight",
+// Characterful humanist serif for headlines — does most of the hand-crafted work.
+const fraunces = localFont({
+  src: "./fonts/Fraunces-Variable.woff2",
+  variable: "--font-fraunces",
   display: "swap",
   weight: "100 900",
 });
@@ -67,7 +68,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${interTight.variable}`}>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body className="min-h-screen bg-bg-primary font-sans text-text">
         <a
           href="#main"

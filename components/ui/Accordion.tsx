@@ -14,7 +14,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
   const baseId = useId();
 
   return (
-    <div className="divide-y divide-line overflow-hidden rounded-3xl bg-bg-card shadow-soft">
+    <div className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-bg-card shadow-soft">
       {items.map((item, i) => {
         const isOpen = open === i;
         const headingId = `${baseId}-q-${i}`;
@@ -28,7 +28,7 @@ export function Accordion({ items }: { items: AccordionItem[] }) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-base font-medium text-text transition-colors hover:bg-slate-50 sm:text-lg"
+                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-base font-medium text-text transition-colors hover:bg-bg-secondary sm:text-lg"
               >
                 <span>{item.question}</span>
                 <span

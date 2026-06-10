@@ -25,13 +25,11 @@ const lastUpdated = "June 9, 2026";
 
 export default function LegalPage() {
   return (
-    <section className="pt-28 sm:pt-32">
+    <section className="pt-32 sm:pt-40">
       <div className="container-px pb-24">
         <header className="mx-auto max-w-3xl">
-          <span className="text-sm font-semibold uppercase tracking-wider text-accent-primary">
-            Legal
-          </span>
-          <h1 className="mt-4 font-heading text-4xl font-bold sm:text-5xl">
+          <span className="eyebrow">Legal</span>
+          <h1 className="mt-5 font-heading text-4xl font-semibold sm:text-5xl">
             Legal &amp; Compliance
           </h1>
           <p className="mt-4 text-text-secondary">
