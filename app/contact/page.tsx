@@ -27,7 +27,7 @@ export default function ContactPage() {
           </h1>
           <p className="mt-4 text-lg text-text-secondary">
             Tell us a little about your business and we&apos;ll show you exactly how the
-            AI qualifies and books your leads — usually within one business day.
+            AI qualifies and books your leads, usually within one business day.
           </p>
         </div>
 

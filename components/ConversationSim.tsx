@@ -20,7 +20,7 @@ const thread: Message[] = [
   { from: "lead", text: "My water heater is leaking all over the garage floor 😩" },
   {
     from: "ai",
-    text: "Oh no — let's get someone out fast. What ZIP code is the property in?",
+    text: "Oh no. Let's get someone out fast. What ZIP code is the property in?",
   },
   { from: "lead", text: "80238" },
   {
@@ -31,7 +31,7 @@ const thread: Message[] = [
   { from: "lead", text: "Still leaking, it's getting worse" },
   {
     from: "ai",
-    text: "Got it — flagging this as priority. I have two openings: Today 4:00 PM or Tomorrow 9:00 AM. Which works better?",
+    text: "Got it. Flagging this as priority. I have two openings: Today 4:00 PM or Tomorrow 9:00 AM. Which works better?",
     tag: { label: "Priority lead", tone: "priority" },
   },
   { from: "lead", text: "Today at 4 please" },

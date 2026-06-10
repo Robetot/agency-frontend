@@ -22,7 +22,7 @@ type Tier = {
   price: number;
   tagline: string;
   featured?: boolean;
-  /** Locked/waitlist tier — desaturated, "Coming Soon", Join Waitlist CTA. */
+  /** Locked/waitlist tier - desaturated, "Coming Soon", Join Waitlist CTA. */
   comingSoon?: boolean;
   inherits?: string;
   features: string[];
@@ -41,7 +41,7 @@ const tiers: Tier[] = [
       "Emergency escalation",
       "Real-time calendar booking",
       "Owner alerts",
-      "Bilingual — English + Spanish (auto-detects)",
+      "Bilingual - English + Spanish (auto-detects)",
       "A2P 10DLC compliance",
     ],
   },
@@ -71,7 +71,7 @@ const tiers: Tier[] = [
       "Estimate follow-ups",
       "Instagram DM",
       "All languages supported (auto-detected)",
-      "CRM integration — leads sync to Jobber / Housecall Pro",
+      "CRM integration - leads sync to Jobber / Housecall Pro",
       "Priority support",
     ],
   },
@@ -86,7 +86,7 @@ const pricingFaqs = [
   {
     question: "Can I change plans later?",
     answer:
-      "Yes — you can upgrade or downgrade anytime as your needs change. There are no long-term contracts.",
+      "Yes. You can upgrade or downgrade anytime as your needs change. There are no long-term contracts.",
   },
 ];
 
@@ -103,7 +103,7 @@ export default function PricingPage() {
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-text-secondary">
                 One recovered job often covers the month. Choose the plan that matches
-                how your customers reach you — every tier includes the core missed-call
+                how your customers reach you. Every tier includes the core missed-call
                 text-back engine.
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function PricingPage() {
                       ? "border border-line bg-bg-primary opacity-80"
                       : "border border-accent-primary bg-bg-card shadow-soft",
                   )}
-                  aria-label={tier.comingSoon ? `${tier.name} plan — coming soon` : undefined}
+                  aria-label={tier.comingSoon ? `${tier.name} plan - coming soon` : undefined}
                 >
                   {tier.comingSoon ? (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-[#1C1A17]">

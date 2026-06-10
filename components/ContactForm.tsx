@@ -13,7 +13,7 @@ export function ContactForm() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!consent) return;
-    // No backend wired up yet — connect this to your CRM/endpoint.
+    // No backend wired up yet - connect this to your CRM/endpoint.
     setSubmitted(true);
   }
 
@@ -35,7 +35,7 @@ export function ContactForm() {
             />
           </svg>
         </span>
-        <h2 className="mt-5 font-heading text-2xl font-semibold">Thanks — you&apos;re in!</h2>
+        <h2 className="mt-5 font-heading text-2xl font-semibold">Thanks, you&apos;re in!</h2>
         <p className="mt-2 max-w-sm text-text-secondary">
           We&apos;ll reach out shortly to schedule your demo. Prefer to grab a time now?
           Use the scheduler below.
@@ -86,7 +86,7 @@ export function ContactForm() {
         </Select>
       </div>
 
-      {/* MANDATORY consent — submit stays disabled until checked */}
+      {/* MANDATORY consent - submit stays disabled until checked */}
       <div className="mt-6 flex items-start gap-3 rounded-xl border border-line bg-bg-secondary p-4">
         <input
           id="sms-consent"
@@ -117,7 +117,7 @@ export function ContactForm() {
       </Button>
       <p className="mt-3 text-center text-xs text-text-secondary" aria-live="polite">
         {consent
-          ? "Thanks — you can submit your request now."
+          ? "Thanks, you can submit your request now."
           : "Please agree to the messaging terms above to continue."}
       </p>
     </form>

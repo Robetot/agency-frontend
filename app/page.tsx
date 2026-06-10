@@ -68,7 +68,7 @@ export default function HomePage() {
             <Reveal from="up" delay={0.12}>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-text-secondary">
                 When you can&apos;t pick up, {BRAND_NAME} instantly texts the caller
-                back, qualifies the job, and books the appointment — so the call you
+                back, qualifies the job, and books the appointment, so the call you
                 missed doesn&apos;t become the customer you lost.
               </p>
             </Reveal>
@@ -105,7 +105,7 @@ export default function HomePage() {
                 Half of calls to home services go unanswered
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-text-secondary">
-                And most callers don&apos;t leave a voicemail — they just call the next
+                And most callers don&apos;t leave a voicemail. They just call the next
                 company on the list. Every missed call is a job handed to a competitor.
               </p>
             </div>
@@ -187,6 +187,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ---------- KEEP YOUR NUMBER ---------- */}
+      <section className="border-t border-line py-28 sm:py-36">
+        <div className="container-px">
+          <Reveal>
+            <div className="max-w-2xl">
+              <SectionEyebrow>Keep your number</SectionEyebrow>
+              <h2 className="mt-5 font-heading text-3xl font-semibold sm:text-[2.75rem] sm:leading-[1.08]">
+                Keep Your Number. Keep Your Customers.
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-text-secondary">
+                No porting. No new number on your trucks. Nothing changes for the people
+                who call you.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-16 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                title: "Your phone rings first",
+                body: "When a customer calls, your phone rings exactly like it does today. Pick up and it is business as usual. We never get in the way of a call you can answer.",
+              },
+              {
+                title: "We catch the ones you miss",
+                body: "Only when you cannot pick up - on a job, on a roof, on another line - does the call hand off to us. We text the caller back in under 60 seconds so they do not call your competitor.",
+              },
+              {
+                title: "Setup takes 5 minutes",
+                body: "On a quick call, we walk you through a one-time setup on your phone. Your number stays exactly the same everywhere - trucks, Google, business cards. We handle the rest.",
+              },
+            ].map((card, i) => (
+              <Reveal key={card.title} delay={i * 0.08} from="up">
+                <Card interactive className="h-full">
+                  <h3 className="font-heading text-xl font-semibold">{card.title}</h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-text-secondary">
+                    {card.body}
+                  </p>
+                </Card>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal>
+            <p className="mt-6 text-sm text-text-muted">
+              Works with every major US carrier - AT&amp;T, Verizon, T-Mobile, and more.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ---------- INTERACTIVE DEMO 1: CONVERSATION ---------- */}
       <section
         id="conversation-demo"
@@ -197,12 +247,12 @@ export default function HomePage() {
             <div>
               <SectionEyebrow>See it in action</SectionEyebrow>
               <h2 className="mt-5 font-heading text-3xl font-semibold sm:text-[2.75rem] sm:leading-[1.08]">
-                Watch a real lead get qualified — by text
+                Watch a real lead get qualified, by text
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-text-secondary">
                 A homeowner with a leaking water heater calls and you can&apos;t pick
                 up. Here&apos;s exactly how the assistant turns that missed call into a
-                booked, priority appointment — captured area, urgency, and time slot
+                booked, priority appointment. Captured area, urgency, and time slot
                 included.
               </p>
               <ul className="mt-8 space-y-3.5">
@@ -302,7 +352,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ---------- TESTIMONIAL (placeholder — no fabricated quotes) ---------- */}
+      {/* ---------- TESTIMONIAL (placeholder - no fabricated quotes) ---------- */}
       <section className="py-28 sm:py-36">
         <div className="container-px">
           <Reveal>
@@ -314,13 +364,13 @@ export default function HomePage() {
                 &ldquo;
               </span>
               <blockquote className="-mt-4 font-heading text-2xl font-medium leading-snug text-text sm:text-3xl sm:leading-snug">
-                {`{{ CUSTOMER_QUOTE }}`} — replace this with a real customer&apos;s own
+                {`{{ CUSTOMER_QUOTE }}`}. Replace this with a real customer&apos;s own
                 words once you have their written permission to publish them.
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3 text-sm text-text-muted">
                 <span className="h-10 w-10 rounded-full border border-line bg-bg-secondary" aria-hidden="true" />
                 <span>
-                  Placeholder — add customer name, role &amp; trade
+                  Placeholder - add customer name, role &amp; trade
                   <span className="block text-xs">No testimonial is shown until a real, permission-based quote is added.</span>
                 </span>
               </figcaption>
@@ -368,7 +418,7 @@ export default function HomePage() {
                   Stop losing jobs to voicemail
                 </h2>
                 <p className="mt-7 text-lg leading-relaxed text-[#FAF8F5]/85">
-                  See how {BRAND_NAME} answers, qualifies, and books your missed calls —
+                  See how {BRAND_NAME} answers, qualifies, and books your missed calls,
                   live, on a quick demo built around your business.
                 </p>
                 <div className="mt-10 flex flex-col gap-3 sm:flex-row">

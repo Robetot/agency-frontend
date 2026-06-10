@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 /**
- * Stylized, realistic SMS mockup for the hero — a real product moment showing
+ * Stylized, realistic SMS mockup for the hero - a real product moment showing
  * missed call -> instant text-back -> qualify -> booked. Warm cream/teal bubbles,
  * gentle staggered entrance (not a loop). Decorative, so marked aria-hidden with a
  * descriptive label on the frame.
@@ -15,10 +15,10 @@ type Line =
   | { kind: "booked"; text: string };
 
 const lines: Line[] = [
-  { kind: "ai", text: `Hi, it's the team at Rapid Plumbing — sorry we missed your call! What's going on?` },
+  { kind: "ai", text: `Hi, it's the team at Rapid Plumbing, sorry we missed your call! What's going on?` },
   { kind: "lead", text: "Water heater's leaking in the garage 😬" },
   { kind: "ai", text: "On it. What ZIP are you in, and is it actively flooding?" },
-  { kind: "lead", text: "80238 — yeah it's getting worse" },
+  { kind: "lead", text: "80238, yeah it's getting worse" },
   { kind: "booked", text: "Booked: today 4:00 PM · licensed tech · you've been alerted" },
 ];
 
@@ -56,7 +56,7 @@ export function HeroConversation() {
           <div className="mt-3 flex items-center gap-2 rounded-xl border border-accent-secondary/30 bg-accent-secondary/10 px-3 py-2">
             <PhoneMissedIcon />
             <p className="text-xs font-medium text-text">
-              Missed call · 2:14 PM — replied in 8 seconds
+              Missed call · 2:14 PM - replied in 8 seconds
             </p>
           </div>
         </div>
