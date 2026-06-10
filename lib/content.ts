@@ -74,6 +74,11 @@ export const features = [
     body: "A2P 10DLC registration, automatic opt-out handling, and required messaging disclosures are handled for you.",
     tone: "accent",
   },
+  {
+    title: "Weekly Performance Report",
+    body: "Every Monday morning, get a text with your numbers - calls caught, leads qualified, jobs booked, and estimated revenue recovered. No login required.",
+    tone: "trend",
+  },
 ] as const;
 
 export const steps = [

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Accordion } from "@/components/ui/Accordion";
@@ -517,6 +518,9 @@ function StepIcon({ index }: { index: number }) {
 }
 
 function FeatureIcon({ tone }: { tone: string }) {
+  if (tone === "trend") {
+    return <TrendingUp size={20} aria-hidden="true" />;
+  }
   if (tone === "danger") {
     return (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
