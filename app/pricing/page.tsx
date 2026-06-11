@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 type Tier = {
   name: string;
   price: number;
+  allowance: string;
   tagline: string;
   featured?: boolean;
   /** Locked/waitlist tier - desaturated, "Coming Soon", Join Waitlist CTA. */
@@ -34,7 +35,9 @@ const tiers: Tier[] = [
   {
     name: "Starter",
     price: 149,
-    tagline: "Everything you need to stop losing missed calls.",
+    allowance: "Includes 1,000 text messages/mo. Overage $0.02/text.",
+    tagline:
+      "Stop losing missed calls. Every call you cannot answer becomes a qualified, booked job.",
     features: [
       {
         label: "Missed-call text-back",
@@ -91,7 +94,8 @@ const tiers: Tier[] = [
   {
     name: "Growth",
     price: 249,
-    tagline: "Capture leads across every channel your customers use.",
+    allowance: "Includes 3,000 text messages/mo. Overage $0.015/text.",
+    tagline: "Book more jobs from every channel your customers already use.",
     featured: true,
     comingSoon: true,
     inherits: "Starter",
@@ -126,7 +130,9 @@ const tiers: Tier[] = [
   {
     name: "Pro",
     price: 399,
-    tagline: "A full client dashboard and CRM sync for growing teams.",
+    allowance: "Includes 7,000 text messages/mo. Overage $0.012/text.",
+    tagline:
+      "Your front office on autopilot. Leads flow straight into your dispatch software.",
     comingSoon: true,
     inherits: "Growth",
     features: [
@@ -207,11 +213,11 @@ export default function PricingPage() {
                       ? "border border-line bg-bg-primary opacity-80"
                       : "border border-accent-primary bg-bg-card shadow-soft",
                   )}
-                  aria-label={tier.comingSoon ? `${tier.name} plan - coming soon` : undefined}
+                  aria-label={tier.comingSoon ? `${tier.name} plan - early access` : undefined}
                 >
                   {tier.comingSoon ? (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-secondary px-3.5 py-1 text-xs font-bold uppercase tracking-wide text-[#1C1A17]">
-                      Coming Soon
+                      Early Access
                     </span>
                   ) : (
                     tier.featured && (
@@ -230,6 +236,7 @@ export default function PricingPage() {
                     </span>
                     <span className="text-text-secondary">/mo</span>
                   </div>
+                  <p className="mt-2 text-xs text-text-muted">{tier.allowance}</p>
 
                   {tier.comingSoon ? (
                     <Button
